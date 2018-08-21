@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World</title>
+</head>
+<body>
+	
+	<!--                Notes:                 -->
+	<!-- Directive v-bind can be written as :  -->
+
+	<div id="app">
+
+		Hello {{ name }}
+		<hr>
+		<!-- ------------------------- -->
+		
+		<!-- 
+			v-bind:href=""
+			v-bind:value=""	
+		 -->
+		<a :href="url" target="_blank">{{ page }}</a>
+		<hr>
+		<!-- ------------------------- -->
+
+		<template v-if="showText">
+			<h1>This is ma Title</h1>
+			<h2>This is ma Sub-title</h2>
+		</template>
+
+		<p v-show="!showText">Paragraph hidden</p>
+		<hr>
+		<!-- ------------------------- -->
+
+		<h1>{{ title | uppercase }}</h1>
+		<h2>{{ subt | lowercase | capitalize }}</h2>
+		<hr>
+		<!-- ------------------------- -->
+		
+		<button @click="add">+1</button>
+		<button @click="less">-1</button>
+
+		<p>Count: {{ count }}</p>
+		<hr>
+		<!-- ------------------------- -->
+
+		<input v-model="nameInput" type="text" name="" placeholder="Type your name" required>
+
+		<p>UpperCase Name: {{ nameInput | uppercase }}</p>
+		
+		<form @submit.prevent="">
+			<h2>Favorite programming languages</h2>
+			<input v-model="langFav" type="checkbox" id="php" value="php">
+			<label for="php">PHP</label>
+			<input v-model="langFav" type="checkbox" id="nodejs" value="nodejs">
+			<label for="nodejs">NodeJS</label>
+			<input v-model="langFav" type="checkbox" id="python" value="python">
+			<label for="python">Python</label>
+			<input v-model="langFav" type="checkbox" id="asp" value="asp">
+			<label for="asp">ASP</label>
+			<input v-model="langFav" type="checkbox" id="jsp" value="jsp">
+			<label for="jsp">JSP</label>
+			<br>
+			<input type="submit" id="send" value="send">
+		</form>
+		
+		<h3 v-if="langFav.length">List of Languages</h3>
+
+		<p v-for="i in langFav">
+			{{ i }}
+		</p>
+
+		<hr>
+		<!-- ------------------------- -->
+		<h1>FORM WITH A COMPONENT</h1>
+		
+		<form @submit.prevent="submit">
+			<template v-for="lang in languagesV">
+				<languages :lang="lang" @checked="selLang"></languages>
+			</template>
+			<input type="submit" id="send" value="send">
+		</form>
+
+		<h3 v-if="selectLang.length">List of Languages</h3>
+		<p v-for="i in selectLang">
+			{{ i }}
+		</p>
+
+	</div>
+	
+	<br><br><br><br><br>
+
+	<script type="text/javascript" src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script>
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
