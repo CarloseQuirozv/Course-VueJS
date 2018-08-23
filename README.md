@@ -1,2 +1,2 @@
-# Course-VueJS
+# VueJS
 Starting with JavaScript framework
