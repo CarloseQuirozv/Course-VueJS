@@ -1,2 +1,2 @@
 # VueJS
-Starting with JavaScript framework
+Starting with JavaScript framework, simple examples.

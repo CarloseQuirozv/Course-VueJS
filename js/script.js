@@ -18,7 +18,15 @@ Vue.component('languages',{
 
 })
 
-let app = new Vue({
+
+let DATE = new Date();
+let day = DATE.getDate();
+let month = DATE.getMonth() + 1;
+let year = DATE.getFullYear();
+
+var date = String(year) + "-" + String(month) + "-" + String(day);
+
+ let app = new Vue({
 	el: '#app',
 
 	data: {
@@ -39,7 +47,7 @@ let app = new Vue({
 			{nameL: 'Jsp', value: 'jsp'},
 		],
 		selectLang: [],
-
+		age: '',
 
 	},
 
@@ -59,6 +67,25 @@ let app = new Vue({
 				word += split[i].charAt(0).toUpperCase() + split[i].slice(1).toLowerCase() + ' ';	
 			return word;
 		}
+	},
+
+	computed: {
+		ageCalculated(){
+
+			var splitAge = this.age.split('-');
+
+			if(!(splitAge.length == 1 && splitAge[0] == '')){
+
+				if(splitAge[1] < month)
+					return parseInt(year, 10) - parseInt(splitAge[0], 10);
+				else if(splitAge[1] == month && splitAge[2] < day)
+					return parseInt(year, 10) - parseInt(splitAge[0], 10);
+				else
+					return (parseInt(year, 10) - parseInt(splitAge[0], 10))-1;
+			}
+			else return 0;
+
+		},
 	},
 
 	methods: {
@@ -83,5 +110,3 @@ let app = new Vue({
 	}
 
 });
-
-// console.log(app.name);
