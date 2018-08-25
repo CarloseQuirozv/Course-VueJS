@@ -10,7 +10,19 @@
 
 ## `task-list.html`
 
-> **An example with data binding using Boostrap 4**.
+> **An example with data binding using ```Boostrap 4```**.
+
+```css
+
+.logo {
+  font-size: 84px;
+  color: #fefefe;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+} 
+
+```
+
 
 ![](/img/img.png)
 
