@@ -1,4 +1,4 @@
-#Coding a little bit in ***VueJS***
+# Coding a little bit in ***VueJS***
 
 ## `vue-introduction.html`
 
@@ -10,8 +10,7 @@
 
 ## `task-list.html`
 
-> An example with data binding using Boostrap 4.
-> **Task List**
+> **An example with data binding using Boostrap 4**.
 
 ![](/img/img.png)
 
