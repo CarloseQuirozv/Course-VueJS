@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+
+*{
+	font-family: 'Indie Flower', cursive;
+}
+body{
+	text-align: center;
+	font-size: 18px;
+}
+
+button {
+	cursor: pointer;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*----------------------------------------------*/
+
+.logo {
+  font-size: 84px;
+  color: #fefefe;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+}
+
+/* stuff for both words */
+.logo span {
+  position: relative;
+}
+.logo span:before,
+.logo span:after {
+  content: '';
+  position: absolute;
+  border-width: 32px;/* makes a nice, big 64px square */
+  border-style: solid;
+  border-color: transparent;
+  height: 0;
+  z-index: 10;
+}
+.logo .word1 {
+  color: #dd143c;
+  margin-right: -38px;
+  transform: rotateY(180deg);/* using Prefix free */
+  display: inline-block;/* required for transform */
+  z-index: 10;/* stack 1st word on top */
+}
+.logo .word1:before {
+  right: -4px;/* would be left, but we flipped the word */
+  top: -9px;
+  border-top-color: #fefefe;/* match background color */
+  border-right-color: #fefefe;/* would be left, but we flipped the word */
+}
+.logo .word1:after {
+  left: 17px;/* would be right, but we flipped the word */
+  bottom: -15px;
+  border-bottom-color: #fefefe;
+  border-left-color: #fefefe;/* would be right, but we flipped the word */
+}
+
+/* stuff for 2nd word */
+.logo .word2 {
+  z-index: 0;/* stack 2nd word below */
+  color: #4888F0;
+}
+.logo .word2:before {
+  left: -4px;
+  top: -6px;
+  border-top-color: #fefefe;
+  border-left-color: #fefefe;
+}
+.logo .word2:after {
+  right: -4px;  
+  bottom: 4px;
+  border-bottom-color: #fefefe;
+  border-right-color: #fefefe;
+}
